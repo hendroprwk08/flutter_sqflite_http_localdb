@@ -6,7 +6,7 @@ import 'search_page.dart' as search;
 import 'db_helper.dart';
 
 void main() => runApp(MaterialApp(
-  title: "Submission 04",
+  title: "SQFLITE + API",
   home: MyApp(),
   debugShowCheckedModeBanner: false,
 ));
