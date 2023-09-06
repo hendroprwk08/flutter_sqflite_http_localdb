@@ -19,8 +19,6 @@ class DetilMakanan extends StatefulWidget {
 class _DetilMakananState extends State<DetilMakanan> {
   String? id, gambar, nama, kategori, instruksi;
 
-  // IconData iData;
-
   _DetilMakananState(this.id);
 
   var db = new DBHelper();
@@ -50,6 +48,7 @@ class _DetilMakananState extends State<DetilMakanan> {
     if (makanans.length == 0) {
       return new Center(child: new CircularProgressIndicator());
     } else {
+      id = makanans[0].idMeal;
       gambar = makanans[0].strMealThumb;
       nama = makanans[0].strMeal;
       kategori = makanans[0].strCategory;
@@ -195,6 +194,9 @@ class _DetilMakananState extends State<DetilMakanan> {
 
         setState(() {
           widget.isExist = true;
+
+          db.saveRecord(new MakananFavorit(this.id, this.nama, this.kategori,
+              this.instruksi, this.gambar) );
         });
       });
     }

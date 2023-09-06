@@ -20,7 +20,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
 
   late TabController tabController;
 
-  var db = new DBHelper();
+  // var db = new DBHelper();
 
   @override
   void initState() {
